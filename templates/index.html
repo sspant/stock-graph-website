@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Graph Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>📈 Stock Graph Dashboard</h1>
+            <p class="subtitle">Most Popular Stocks (Last 8 Hours)</p>
+            <button id="refreshBtn" class="refresh-btn">🔄 Refresh</button>
+        </header>
+
+        <div class="loading" id="loading">
+            <div class="spinner"></div>
+            <p>Loading popular stocks...</p>
+        </div>
+
+        <div id="stocksContainer" class="stocks-container"></div>
+
+        <div id="errorContainer" class="error-container" style="display: none;"></div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
